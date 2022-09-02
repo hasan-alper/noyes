@@ -4,16 +4,48 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="/static/css/app.css" />
 		<title>Noyes | Poem Classifier</title>
 	</head>
 	<body>
 		<form method="POST">
-			<textarea name="content" id="content"></textarea> <br />
+			<h1>Noyes - Poem Classifier</h1>
+			<p>This tool classifies poems into different types according to their content.</p>
+			<p>Write or paste a poem down below and hit the button to get the result.</p>
+
+			<div id="results">
+				<p id="age-result">{{ age }}</p>
+				<p id="type-result">{{ type }}</p>
+			</div>
 
 			<input type="submit" value="Submit" />
-		</form>
 
-		<p>{{ age }}</p>
-		<p>{{ type }}</p>
+			<textarea name="content" id="content"></textarea>
+
+			<h1>Wordclouds</h1>
+
+			<h2>Age</h2>
+
+			<h3>Renaissance</h3>
+			<img src="/static/img/age-renaissance.png" />
+			<h3>Modern</h3>
+			<img src="/static/img/age-modern.png" />
+
+			<h2>Type</h2>
+
+			<h3>Love</h3>
+			<img src="/static/img/type-love.png" />
+			<h3>Nature</h3>
+			<img src="/static/img/type-nature.png" />
+			<h3>Mythology & Folklore</h3>
+			<img src="/static/img/type-mythology-&-folklore.png" />
+
+			<h1>Technical Details</h1>
+			<p>
+				The model was trained on <a href="https://www.kaggle.com/datasets/ultrajack/modern-renaissance-poetry" target="_blank">poem classification dataset</a>, using a logistic regression classifier. The accuracy of the age class is
+				95% while the accuracy of the type class is 65%. The code is located <a href="https://github.com/hasan-alper/noyes" target="_blank">here</a> on GitHub. This project was made by Hasan Alper Aydın over a 2-day span in
+				September 2022.
+			</p>
+		</form>
 	</body>
 </html>
